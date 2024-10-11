@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
-import Styles from './NavBar.module.css';
+import Styles from './Navbar.module.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 
