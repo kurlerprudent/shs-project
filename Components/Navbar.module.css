@@ -1,0 +1,46 @@
+.container{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    color: white;
+}
+.logoName{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.navLinks ul{
+    width: 50%;
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    gap: 3rem;
+}
+
+.link{
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    color: inherit;
+    transition: 0.4s;
+}
+
+.link:hover{
+    color: var(--brownish);
+}
+
+.active{
+    color: var(--brownish);
+}
+.menuIcon:hover{
+    cursor: pointer;
+
+}

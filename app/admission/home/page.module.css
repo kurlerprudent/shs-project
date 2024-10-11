@@ -1,0 +1,51 @@
+.container{
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+    padding-left: 4%;
+
+}
+.congratsTextAndButtons{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.congratsText{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.congratsText h2{
+    background-color: var(--background);
+    color: white;
+    width: 72%;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 20px;
+    font-weight: 800;
+}
+.congratsText p{
+    width: 90%;
+    font-size: 23px;
+    line-height: 1.3;
+    
+}
+.redButtons{
+    display: flex;
+    gap: 20px;
+}
+.coatContainer{
+    width: 20%;
+}

@@ -1,0 +1,14 @@
+/* components/CustomSelect.module.css */
+.customSelect {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 28px;
+    color: var(--background);
+  }
+  .placeholderText{
+    font-size: 28px;
+    color: var(--background);
+  }
+  

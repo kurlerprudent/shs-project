@@ -2,8 +2,9 @@
   --background: #172751;
   --foreground: #171717;
   --redish:#FF5659;
-  --brownsig:#C5A07D;
-  --violetish:#3D4472
+  --brownish:#C5A07D;
+  --violetish:#3D4472;
+  --yellowish:#F4B857
 }
 
 @media (prefers-color-scheme: dark) {
