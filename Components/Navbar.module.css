@@ -1,4 +1,4 @@
-.container{
+.container {
     background-color: transparent;
     display: flex;
     justify-content: space-around;
@@ -9,23 +9,35 @@
     z-index: 100;
     color: white;
 }
-.logoName{
-    font-size: 1.5rem;
+
+.logoName {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.logoName:hover {
+    cursor: pointer;
+}
+
+.logoName h1 {
+    font-size: 2rem;
     font-weight: 700;
 }
 
-.navLinks ul{
-    width: 50%;
+
+.navLinks ul {
+    width: 100%;
 }
 
-.links{
+.links {
     display: flex;
     justify-content: space-around;
     list-style: none;
     gap: 3rem;
+    
 }
 
-.link{
+.link {
     font-size: 24px;
     font-weight: 500;
     cursor: pointer;
@@ -33,14 +45,88 @@
     transition: 0.4s;
 }
 
-.link:hover{
+.link:hover {
     color: var(--brownish);
 }
 
-.active{
+.active {
     color: var(--brownish);
 }
-.menuIcon:hover{
+.menuIcon{
+    display: none;
+}
+
+.menuIcon:hover {
     cursor: pointer;
+}
 
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 60%;
+    height: 100vh;
+    background-color: rgb(27, 29, 29);
+    z-index: 10;
+    transition: right 0.5s ease; 
+    display: none;
+}
+
+.mobileMenu.open {
+    right: 0;
+}
+
+.mobileMenu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    list-style-type: none;
+}
+
+.mobileMenu ul li {
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.closeMenu {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1060px) {
+    .navLinks ul {
+        display: none;
+    }
+
+    .links {
+        display: none;
+    }
+    .mobileMenu{
+        display: block;
+    }
+    .menuIcon{
+        display: block;
+    }
+}
+
+@media  screen and (max-width: 500px) {
+    .logoName h1 {
+        display: none;
+    }
+    .mobileMenu{
+        width: 100%;
+    }
+    
 }

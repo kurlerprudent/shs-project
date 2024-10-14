@@ -1,4 +1,4 @@
-/* components/CustomSelect.module.css */
+
 .customSelect {
     width: 100%;
     padding: 10px;
@@ -6,9 +6,20 @@
     border: 1px solid #ccc;
     font-size: 28px;
     color: var(--background);
+    background-color: #FFF9C4;
   }
   .placeholderText{
     font-size: 28px;
     color: var(--background);
   }
-  
+  @media screen and (max-width: 600px) {
+    .customSelect {
+      padding: 5px;
+      font-size: 20px;
+      height: 70px;
+    }
+    .placeholderText{
+      font-size: 20px;
+    }
+    
+  }

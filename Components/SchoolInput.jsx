@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import styles from './ScoolInput.module.css'
 import CustomSelect from './CustomDropDown'
 import RedButton from './RedButton';
+import Link from 'next/link';
+import { Button } from '@mui/material';
 
 const SchoolForm = ({ regions, schools }) => {
   const [selectedRegion, setSelectedRegion] = useState('');
@@ -36,8 +38,14 @@ const SchoolForm = ({ regions, schools }) => {
         placeholder="Enter your index number"
         className={styles.input}
       />
+    <div style={{width:'100%',display:'flex',justifyContent:'center',alignItems:'center',marginTop:20}}>
+    <Link href='/admission/home'>
+           <Button variant="contained" sx={{width:{md:300,xs:260}}}>
+        Submit
+      </Button>
+      </Link>
+    </div>
 
-        <RedButton title='Submit' link='/admission/home'/>
     </div>
   );
 };

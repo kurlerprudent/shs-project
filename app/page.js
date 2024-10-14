@@ -4,6 +4,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import EastIcon from '@mui/icons-material/East';
 import Coat from "@/Components/Coat";
 import Link from "next/link";
+import Slider from "@/Components/Slider";
 
 export default function Home() {
   return (
@@ -31,21 +32,20 @@ export default function Home() {
       
     </div>
 
-      <Coat/>
+
       </div>
 
       <div className={styles.thirdSection}>
         <Link href='/admission'>
-        <div className={styles.button}>
-          <p>Start</p>
-          <div style={{backgroundColor:'#4EAD67',borderRadius:'50%',display:'flex',justifyContent:'center',alignItems:'center'}}>
-          <EastIcon className={styles.arrow} sx={{color:'black',fontSize:28,fontWeight:'700'}}/>
-          </div>
-          
-        </div>
+       
+
+      <button className={styles.btn}>
+        <span>Get started</span>
+      </button>
+
         </Link>
         <div className={styles.slide}>
-          <div>Phot slider</div>
+          <Slider/>
         </div>
       </div>
     </div>

@@ -1,10 +1,11 @@
+import { Button } from '@mui/material'
 import styles from './RedButton.module.css'
-import Link from 'next/link'
-const RedButton = ({title,link}) => {
+
+const RedButton = () => {
   return (
     <div>
             <div className={styles.buttonContainer}>
-           <Link href={link}> <button type='submit'>{title}</button></Link>
+     
       </div>
     </div>
   )

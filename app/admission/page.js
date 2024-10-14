@@ -28,9 +28,7 @@ const Page = () => {
         <div className={Styles.formContainer}>
           <SchoolForm regions={regions} schools={schools} />
         </div>
-        <div className={Styles.coatContainer}>
-          <Coat />
-        </div>
+      
       </div>
     </div>
   );

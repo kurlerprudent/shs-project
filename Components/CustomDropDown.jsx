@@ -1,9 +1,9 @@
 "use client";
-// components/CustomSelect.js
+
 import React, { useEffect, useRef } from 'react';
 import Choices from 'choices.js';
-import 'choices.js/public/assets/styles/choices.css'; // Import Choices.js styles
-import styles from './CustomDropDown.module.css'; // Create your own styles if needed
+import 'choices.js/public/assets/styles/choices.css'; 
+import styles from './CustomDropDown.module.css'; 
 
 const CustomSelect = ({ options, selected, onChange, placeholder }) => {
   const selectRef = useRef(null);
