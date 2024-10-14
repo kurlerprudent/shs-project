@@ -1,8 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import EastIcon from '@mui/icons-material/East';
-import Coat from "@/Components/Coat";
 import Link from "next/link";
 import Slider from "@/Components/Slider";
 
@@ -27,7 +25,9 @@ export default function Home() {
            
           </div>
           <div style={{display:'flex',width:'90%',flexDirection:'row-reverse'}} >
+            <Link href='/admin'>
             <AutoAwesomeIcon sx={{color:'white',fontSize:40}}/>
+            </Link>
           </div>
       
     </div>
