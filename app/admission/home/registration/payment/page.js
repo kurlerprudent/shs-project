@@ -79,9 +79,9 @@ const Page = () => {
           Payment Methods
         </Typography>
         <Tabs value={tabIndex} onChange={handleTabChange}>
-          <Tab label="Mobile Money" />
-          <Tab label="Bank" />
-          <Tab label="Credit Card" />
+          <Tab disableRipple label="Mobile Money" />
+          <Tab disableRipple label="Bank" />
+          <Tab disableRipple label="Credit Card" />
         </Tabs>
         <form onSubmit={handleSubmit}>
           {tabIndex === 0 && (
