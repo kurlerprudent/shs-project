@@ -23,10 +23,17 @@
     position: absolute;
     top: 50%;
     left: 0;
+    transition: 0.3s ease-in;
   }
 
     .buttonNext{
         position: absolute;
         top: 50%;
         right: 0;
+        transition: 0.3s ease-in;
+    }
+
+    .buttonPrev:hover, .buttonNext:hover{
+        background-color: #a6a8ab;
+        cursor: pointer;
     }

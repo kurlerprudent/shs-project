@@ -8,12 +8,17 @@ import { Box } from '@mui/material';
 
 
 const images = [
-    '/Images/school1.jpg',
+    
     '/Images/school2.jpg',
     '/Images/school3.jpg',
-    '/Images/school4.jpg',
-    '/Images/school5.jpg',
-    '/Images/school6.jpg'
+    '/Images/schoolb.jpg',
+    '/Images/schoolc.jpg',
+    '/Images/schoold.jpg',
+    '/Images/schoole.jpg',
+    '/Images/school7.jpg',
+    '/Images/school8.jpg',
+    '/Images/school9.jpg',
+    '/Images/schoola.jpg'
   ];
 
 const Slider = () => {
@@ -36,7 +41,7 @@ const Slider = () => {
            <Box
         sx={{
           width: '100%',
-          height: '400px', // Adjust height as needed
+          height: '400px', 
           backgroundImage: `url(${images[currentIndex]})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',

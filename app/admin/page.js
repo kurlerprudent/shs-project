@@ -74,13 +74,13 @@ const Page = () => {
           type="button" 
           variant="contained" 
           color="primary" 
-          sx={{ mt:{xs:1,md: 3}, mb: 1,width:{xs:250,md:300} }}
+          sx={{ mt:{xs:1,md: 3}, mb: 1,width:{xs:310,md:300} }}
           onClick={handleSubmit}
         >
           Add Student
         </Button>
 
-        <Button sx={{height:40,mt:{xs:1,md: 3},width:{xs:250,md:300}}}
+        <Button sx={{height:40,mt:{xs:1,md: 3},width:{xs:310,md:300}}}
         variant="contained"
         component="label"
       >

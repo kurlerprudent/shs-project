@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import Coat from '@/Components/Coat';
 import Styles from './page.module.css';
 import SchoolForm from '@/Components/SchoolInput';
 
