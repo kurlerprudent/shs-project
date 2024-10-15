@@ -1,51 +1,55 @@
 "use client"
-import styles from './Slider.module.css'
-import React, { useState, useEffect } from 'react';
-import image1 from '../Images/bamk.jpg';
-import image2 from '../Images/coat.jpg';
-import image3 from '../Images/momo.jpg';
+import { useState } from 'react';
+import Image from 'next/image';
+import styles from './Slider.module.css';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { Box } from '@mui/material';
 
-const Slider = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
 
-  const slides = [
-    { backgroundImage: `url(${image1})`, alt: 'Image 1' },
-    { backgroundImage: `url(${image2})`, alt: 'Image 2' },
-    { backgroundImage: `url(${image3})`, alt: 'Image 3' },
+const images = [
+    '/Images/school1.jpg',
+    '/Images/school2.jpg',
+    '/Images/school3.jpg',
+    '/Images/school4.jpg',
+    '/Images/school5.jpg',
+    '/Images/school6.jpg'
   ];
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000);
+const Slider = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    return () => clearInterval(intervalId);
-  }, []);
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
-    <div className={styles.slider}>
-      <div className={styles.sliderSlides}>
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`${styles.slide} ${index === slideIndex ? styles.active : ''}`}
-            style={{
-              backgroundImage: slide.backgroundImage[0],
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-        ))}
+    <div  className={styles.slider}>
+     
+    
+           <Box
+        sx={{
+          width: '100%',
+          height: '400px', // Adjust height as needed
+          backgroundImage: `url(${images[currentIndex]})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+
+      
+      <div className={styles.buttonNext}>
+        <ArrowForwardIosIcon onClick={nextSlide} sx={{fontSize:40}}/>
       </div>
-      <div className={styles.sliderControls}>
-        <button className={styles.prevButton} onClick={() => setSlideIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length)}>
-          Previous
-        </button>
-        <button className={styles.nextButton} onClick={() => setSlideIndex((prevIndex) => (prevIndex + 1) % slides.length)}>
-          Next
-        </button>
-      </div>
+        <div className={styles.buttonPrev}>
+            <ArrowBackIosIcon onClick={prevSlide} sx={{fontSize:40}}/>
+        </div>
     </div>
   );
 };

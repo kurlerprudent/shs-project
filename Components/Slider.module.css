@@ -1,41 +1,32 @@
+
 .slider {
-    width: 100%; 
-    height: 100%;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
     position: relative;
   }
   
-  .sliderSlides {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-  }
+.img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
   
-  .slide {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .slide .active {
-    opacity: 1;
-  }
-  
-  .sliderControls {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    padding: 0 20px;
-  }
-  
-  .sliderControls button {
-    background-color: rgba(0, 0, 0, 0.5);
+  .slider .button {
+    background-color: #0070f3;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
     cursor: pointer;
   }
+  
+  .buttonPrev{
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+
+    .buttonNext{
+        position: absolute;
+        top: 50%;
+        right: 0;
+    }

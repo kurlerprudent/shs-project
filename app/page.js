@@ -4,6 +4,9 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import Link from "next/link";
 import Slider from "@/Components/Slider";
 
+
+
+
 export default function Home() {
   return (
     <div className ={styles.pageContainer}>
@@ -45,7 +48,10 @@ export default function Home() {
 
         </Link>
         <div className={styles.slide}>
+          <div style={{width:'100%',height:'100%'}}>
           <Slider/>
+          </div>
+          
         </div>
       </div>
     </div>
