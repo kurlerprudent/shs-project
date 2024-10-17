@@ -40,7 +40,7 @@ const Page = () => {
       <SideBar/>
     <Container sx={{flex:{lg:4,xs:1},bgcolor:'#CED1D5',borderRadius:3,p:5}}>
       <Typography sx={{color:'#547587'}} textAlign='center' variant="h4" gutterBottom>
-        Admin Site
+       Add Student
       </Typography>
       <Box component="form" noValidate sx={{ mt: 1 }}>
         <TextField 
