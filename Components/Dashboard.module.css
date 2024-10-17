@@ -1,0 +1,12 @@
+.container{
+    flex: 4;
+    background-color: #CED1D5;
+    padding: 2%;
+}
+@media screen and (max-width:600px) {
+    .container{
+        flex: 1;
+        margin-top: 10%;
+    }
+    
+}

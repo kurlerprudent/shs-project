@@ -1,0 +1,25 @@
+.container{
+    flex: 1;
+    background-color: #FEFEFE;
+    padding: 1%;
+    margin-left: 1%;
+    min-height: 75vh;
+}
+
+.menuIcon{
+    display: none;
+}
+
+@media screen and (max-width:600px) {
+    .container{
+        display: none;
+    }
+    .menuIcon{
+        position: fixed;
+        display: block;
+        margin-left: 5%;
+        margin-top: 5%;
+        top: 10;
+        left: 10;
+    }
+}

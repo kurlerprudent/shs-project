@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    gap: 10px;
+    width: 230px;
+    height: 43px;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.4s ease-in-out;
+    margin-bottom: 20px;
+    
+}
+.container:hover{
+    background-color: #CED1D5;
+    cursor: pointer;
+}
+.container p{
+    font-size: 16px;
+    font-weight: 600;
+}
