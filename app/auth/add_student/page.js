@@ -38,7 +38,7 @@ const Page = () => {
   return (
     <Box sx={{display:'flex',gap:5,mt:'6%',px:2}}>
       <SideBar/>
-    <Container sx={{flex:{lg:4,xs:1},bgcolor:'#CED1D5',borderRadius:3,p:5}}>
+    <Container sx={{flex:{lg:4,xs:1},mt:{xs:'8%'},bgcolor:'#CED1D5',borderRadius:3,p:5}}>
       <Typography sx={{color:'#547587'}} textAlign='center' variant="h4" gutterBottom>
        Add Student
       </Typography>
