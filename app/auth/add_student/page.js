@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Container, TextField, Button, Typography, Box } from '@mui/material';
 import * as XLSX from 'xlsx';
 import { blue, grey } from '@mui/material/colors';
+import SideBar from '@/Components/SideBar';
 
 const Page = () => {
   const [students, setStudents] = useState([]);
@@ -35,7 +36,9 @@ const Page = () => {
   };
 
   return (
-    <Container sx={{mt:{md:'6%',xs:'40%'},bgcolor:'#CED1D5',borderRadius:3,p:5}}>
+    <Box sx={{display:'flex',gap:5,mt:'6%',px:2}}>
+      <SideBar/>
+    <Container sx={{flex:{lg:4,xs:1},bgcolor:'#CED1D5',borderRadius:3,p:5}}>
       <Typography sx={{color:'#547587'}} textAlign='center' variant="h4" gutterBottom>
         Admin Site
       </Typography>
@@ -106,6 +109,7 @@ const Page = () => {
         ))}
       </ol>
     </Container>
+    </Box>
   );
 };
 
