@@ -8,18 +8,31 @@
 
 .menuIcon{
     display: none;
+    position: fixed;
+    margin-left: 2%;
+    margin-top: 0;
+    top: 10;
+    left: 10;
+}
+.menuIcon:hover{
+    cursor: pointer;
+}
+.mobileSideBar{
+    z-index: 10;
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    width: 60%;
+    height: 1000vh;
+    background-color: rgb(140, 143, 142);
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:650px) {
     .container{
         display: none;
     }
     .menuIcon{
-        position: fixed;
         display: block;
-        margin-left: 5%;
-        margin-top: 5%;
-        top: 10;
-        left: 10;
+        
     }
 }

@@ -19,18 +19,21 @@ const TabSection = ({title}) => {
           </Link>
           
 
-        
+        <Link href='/auth/add_student'>
           <Tab icon={<HowToRegIcon sx={{fontSize:20}}/>} title='Add Student'/>
-        
+          </Link>
+            
+            <Link href='/auth/view_student'>
             <Tab icon={<SupervisorAccountIcon sx={{fontSize:20}}/>} title='View Student'/>
-          
+            </Link>
             
+            <Link href='/auth/add_news'>
             <Tab icon={<PersonIcon sx={{fontSize:20}}/>} title='Add News'/>
-         
+            </Link>
 
-            
+            <Link href='/auth/settings'>
             <Tab icon={<Settings sx={{fontSize:20}}/>} title='Settings'/>
-        
+            </Link>
         </div>
     </div>
   )
