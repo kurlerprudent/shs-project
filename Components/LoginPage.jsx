@@ -1,31 +1,47 @@
-import React from 'react'
-import styles from './LoginPage.module.css'
-import Link from 'next/link'
+"use client";
 
-const LoginPage = () => {
+import * as React from 'react';
+import { AppProvider } from '@toolpad/core/AppProvider';
+import { SignInPage } from '@toolpad/core/SignInPage';
+import { useTheme } from '@mui/material/styles';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { Alert } from '@mui/material';
+
+const providers = [{ id: 'credentials', name: 'Username and Password' }];
+
+export default function LoginPage() {
+  const theme = useTheme();
+  const router = useRouter();
+  const [error, setError] = useState('');
+
+  const signIn = async (provider, formData) => {
+    // You can extract the username and password if needed
+    const username = formData.get('username');
+    const password = formData.get('password');
+
+    // Directly navigate to the dashboard without validation
+    try {
+      // Simulate a delay if needed
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      alert(`Signing in with "${provider.name}" and credentials: ${username}, ${password}`);
+      router.push('/dashboard'); // Redirect to the dashboard on sign-in
+    } catch (err) {
+      setError('An error occurred during sign-in'); // Handle any potential errors
+    }
+  };
+
   return (
-    <div className={styles.container}>
-        
-<form className={styles.form}>
-  <p>Login</p>
-  <div className={styles.group}>
-    <input required="true" className={styles.mainInput} type="text" />
-    <span className={styles.highlightSpan}></span>
-    <label className={styles.lebalEmail}>Email / Username</label>
-  </div>
-  <div className={styles.container1}>
-    <div className={styles.group}>
-      <input required="true" className={styles.mainInput} type="text" />
-      <span className={styles.highlightSpan}></span>
-      <label className={styles.lebalEmail}>password</label>
-    </div>
-  </div>
-  <Link href="/auth/dashboard">
-  <button className={styles.submit}>submit</button>
-  </Link>
-</form>
-    </div>
-  )
+    <AppProvider theme={theme}>
+      {error && <Alert severity="error">{error}</Alert>}
+      <SignInPage 
+        signIn={signIn} 
+        providers={providers} 
+        fields={[ 
+          { name: 'username', label: 'Username', type: 'text' },
+          { name: 'password', label: 'Password', type: 'password' }
+        ]}
+      />
+    </AppProvider>
+  );
 }
-
-export default LoginPage

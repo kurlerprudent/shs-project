@@ -1,8 +1,9 @@
-import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+        <h2>Add Student</h2>
+    </div>
   )
 }
 
