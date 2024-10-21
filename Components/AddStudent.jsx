@@ -28,18 +28,18 @@ const AddStudent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+ 
     console.log('Submitted Data:', studentData);
     
-    // Show success message
+   
     setSuccessMessage('Success! Student added.');
 
-    // Clear the success message after 5 seconds
+   
     setTimeout(() => {
       setSuccessMessage('');
     }, 5000);
 
-    // Optionally, reset the form
+   
     setStudentData({
       name: '',
       id: '',
@@ -50,7 +50,7 @@ const AddStudent = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    // Handle file upload logic here
+    
     console.log('Uploaded File:', file);
   };
 

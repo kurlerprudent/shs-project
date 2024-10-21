@@ -19,7 +19,7 @@ import {
     RadialLinearScale
 } from 'chart.js';
 
-// Register the components
+
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -36,7 +36,7 @@ ChartJS.register(
 );
 
 const Analytics = () => {
-    // Sample data for the charts
+ 
     const visitedData = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June'],
         datasets: [

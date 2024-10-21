@@ -10,12 +10,12 @@ const ViewStudents = () => {
         () => [
             { name: 'John Doe', id: '12345', region: 'Region A', school: 'School XYZ' },
             { name: 'Jane Smith', id: '67890', region: 'Region B', school: 'School ABC' },
-            // Add more student data here
+          
         ],
         []
     );
 
-    // Filter data based on search query
+   
     const filteredData = data.filter(student =>
         student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         student.id.includes(searchQuery)
@@ -42,12 +42,12 @@ const ViewStudents = () => {
 
     const handleEdit = (student) => {
         console.log('Edit student:', student);
-        // Implement edit functionality
+       
     };
 
     const handleDelete = (id) => {
         console.log('Delete student with ID:', id);
-        // Implement delete functionality
+        
     };
 
     const {

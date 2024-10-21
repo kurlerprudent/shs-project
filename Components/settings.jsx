@@ -23,12 +23,12 @@ const Settings = () => {
     };
 
     const handleSave = () => {
-        // Handle save logic here (e.g., display a message)
+        
         console.log('Settings saved:', { username, email, password, profilePicture });
     };
 
     const handleCancel = () => {
-        // Reset the form fields
+       
         setUsername('');
         setEmail('');
         setPassword('');
