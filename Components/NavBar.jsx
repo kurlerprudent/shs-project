@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -12,9 +12,18 @@ const NavBar = () => {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+
+  const shouldHideNavBar = router.pathname && 
+    (router.pathname.includes('auth') || router.pathname.includes('dashboard'));
+
+  if (shouldHideNavBar) {
+    return null;
+  }
+
   const handleMenuToggleOpen = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+  
   const handleMenuToggleClose = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
