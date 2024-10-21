@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { AppProvider } from "@toolpad/core";
 import { AddAPhotoOutlined, Analytics, Dashboard, Logout, Settings, ViewAgenda } from "@mui/icons-material";
 import theme from '@/theme';
+import { ThemeProvider } from "@mui/material";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,10 +46,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <ThemeProvider theme={theme}>
         <AppProvider theme={theme} branding={{title:'SHS WEB'}} navigation={NAVIGATION}>
         {showNavBar && <NavBar />}
         {children}
         </AppProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

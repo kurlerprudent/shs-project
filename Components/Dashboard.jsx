@@ -5,6 +5,7 @@ import { Person } from "@mui/icons-material"
 import { Box, Grid, Input, Paper, Typography } from "@mui/material"
 import SearchComponent from "./SearchComponent"
 import MessageTable from "./MessageTable"
+import theme from "@/theme"
 
 
 const Dashboard = () => {
@@ -14,8 +15,9 @@ const Dashboard = () => {
             display:'flex',
             justifyContent:'center',
             alignItems:'center',
-            backgroundColor:'#ededed',
+            backgroundColor: theme.palette.secondary.light,
             borderRadius:'50%'
+
         })
 
         const PaperEdit = styled(Paper)({
@@ -25,7 +27,8 @@ const Dashboard = () => {
             flexDirection:'column',
             justifyContent:'center',
             alignItems:'center',
-            boxShadow:2
+            boxShadow:2,
+            backgroundColor: theme.palette.primary.light
            
         })
 
@@ -41,7 +44,7 @@ const Dashboard = () => {
   return (
     <Box sx={{display:'flex', flexDirection:'column',gap:3}}>
         
-        <Typography sx={{fontSize:30,fontWeight:'600'}}>
+        <Typography sx={{fontSize:30,fontWeight:'600',color: theme.palette.primary.main}}>
             Welcome Mr. John
         </Typography>
 
@@ -51,7 +54,7 @@ const Dashboard = () => {
                 <Grid item xs={6} md={3}> 
                     <PaperEdit>
                         <BoxEdit>
-                            <Person/>
+                            <Person sx={{color:theme.palette.secondary.dark}}/>
                         </BoxEdit>
                         <textEdit>
                             10
@@ -66,7 +69,7 @@ const Dashboard = () => {
                 <Grid item xs={6} md={3}> 
                 <PaperEdit>
                     <BoxEdit>
-                         <Person/>
+                         <Person sx={{color:theme.palette.secondary.dark}}/>
                     </BoxEdit>
                     <textEdit>
                             10
@@ -80,7 +83,7 @@ const Dashboard = () => {
                 <Grid item xs={6} md={3}> 
                      <PaperEdit>
                         <BoxEdit>
-                            <Person/>
+                            <Person sx={{color:theme.palette.secondary.dark}}/>
                         </BoxEdit>
                         <textEdit>
                             10
@@ -94,7 +97,7 @@ const Dashboard = () => {
                 <Grid item xs={6} md={3}> 
                   <PaperEdit>
                      <BoxEdit>
-                        <Person/>
+                        <Person sx={{color:theme.palette.secondary.dark}}/>
                      </BoxEdit>
                      <textEdit>
                             10
@@ -110,7 +113,7 @@ const Dashboard = () => {
 
         <Box sx={{display:'flex',flexDirection:'column',gap:3}}>
             <Box sx={{display:'flex',mt:4,justifyContent:'space-between'}}>
-                <Typography sx={{fontSize:30,fontWeight:'600'}}>
+                <Typography sx={{fontSize:30,fontWeight:'600',color: theme.palette.primary.main}}>
                     Unread Messages
                 </Typography>
                 <Box sx={{backgroundColor:'#ededed',width:'30%'}}>

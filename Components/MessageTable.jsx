@@ -1,15 +1,18 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import theme from '@/theme';
 
 // Styled components for header and button
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  backgroundColor: theme.palette.grey[800],
+  backgroundColor: theme.palette.primary.main,
   color: theme.palette.common.white,
 }));
 
+
+
 const StyledButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.grey[800],
+  backgroundColor: theme.palette.error.main,
   color: theme.palette.common.white,
   '&:hover': {
     backgroundColor: theme.palette.grey[700],
@@ -34,7 +37,7 @@ const MessageTable = () => {
     <TableContainer component={Paper}>
       <Table>
         <TableHead>
-          <TableRow>
+          <TableRow sx={{bgcolor:theme.palette.primary.main}}>
             <StyledTableCell>From</StyledTableCell>
             <StyledTableCell>Contact Email</StyledTableCell>
             <StyledTableCell>Message</StyledTableCell>

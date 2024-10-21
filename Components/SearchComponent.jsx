@@ -1,46 +1,53 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import SearchIcon from '@mui/icons-material/Search';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+"use client"
 
-const theme = createTheme({
-  components: {
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: {
-          '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'grey',
+
+import TextField from '@mui/material/TextField';
+
+import {  InputAdornment } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+
+
+
+
+const SearchComponent = () => {
+  return (
+    <TextField
+      variant="outlined"
+      placeholder="Search"
+      fullWidth
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <SearchIcon sx={{ color: '#000' }} />
+          </InputAdornment>
+        ),
+      }}
+      sx={{
+        height: '40px',
+        borderRadius: '8px',
+        backgroundColor: '#f3f3f4',
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            borderColor: 'transparent',
           },
-          '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: '#ededed',
+          '&:hover fieldset': {
+            borderColor: 'rgba(0, 48, 73, 0.4)',
           },
-          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'black',
+          '&.Mui-focused fieldset': {
+            borderColor: 'rgba(0, 48, 73, 0.4)',
+            boxShadow: '0 0 0 4px rgba(0, 48, 73, 0.1)',
           },
         },
-      },
-    },
-  },
-});
-
-function SearchComponent() {
-  return (
-    <ThemeProvider theme={theme}>
-      <TextField
-        variant="outlined"
-        placeholder="Search..."
-        sx={{'::placeholder':{color:'black'}}}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon sx={{color:'black'}} />
-            </InputAdornment>
-          ),
-        }}
-      />
-    </ThemeProvider>
+        '& .MuiInputBase-input': {
+          paddingLeft: '2.5rem',
+          color: '#0d0c22',
+        },
+        '& .MuiInputBase-input::placeholder': {
+          color: '#9e9ea7',
+        },
+      }}
+    />
   );
-}
+};
 
 export default SearchComponent;
