@@ -1,8 +1,9 @@
+import AddStudent from "@/Components/AddStudent"
 
 const page = () => {
   return (
     <div>
-        <h2>Add Student</h2>
+        <AddStudent/>
     </div>
   )
 }

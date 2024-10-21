@@ -1,95 +1,136 @@
-import { Container, Typography, Box, Grid, Paper } from '@mui/material';
+"use client";
+
+import React, { useState } from 'react';
+import {
+  Box,
+  Button,
+  TextField,
+  Typography,
+  Paper,
+  Grid,
+  Input,
+  Alert,
+} from '@mui/material';
 
 const AddStudent = () => {
+  const [studentData, setStudentData] = useState({
+    name: '',
+    id: '',
+    region: '',
+    school: '',
+  });
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setStudentData({ ...studentData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log('Submitted Data:', studentData);
+    
+    // Show success message
+    setSuccessMessage('Success! Student added.');
+
+    // Clear the success message after 5 seconds
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, 5000);
+
+    // Optionally, reset the form
+    setStudentData({
+      name: '',
+      id: '',
+      region: '',
+      school: '',
+    });
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    // Handle file upload logic here
+    console.log('Uploaded File:', file);
+  };
+
   return (
-    <div>
-         <Container sx={{mt:{xs:'30%',md:'10%'},borderRadius:5,p:5}}>
-      <Typography sx={{color:'#CED1D5',fontWeight:'800'}} textAlign='center' variant="h4" gutterBottom>
-        Welcome to the Student Resource Hub!
+    <Box sx={{ padding: 3 }}>
+      <Typography variant="h4" gutterBottom>
+        Add Student
       </Typography>
-      <Typography textAlign='center' sx={{color:'#EFF3F5'}} variant="body1" paragraph>
-        As you prepare for your transition to Senior High School (SHS), we’ve compiled essential resources to assist you in this exciting journey.
-      </Typography>
-
-      <Box my={4}>
-        <Typography sx={{color:'#FEFEFE'}} variant="h5" gutterBottom>
-          Resources for Students
-        </Typography>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={4}>
-            <Paper  elevation={3} sx={{ padding: 2 }}>
-              <Typography sx={{color:'#005A8D'}} variant="h6">Study Tips</Typography>
-              <Typography variant="body2">
-                1. Develop a study schedule that suits your learning style.
-                <br />
-                2. Use past exam papers for practice.
+      <Paper elevation={3} sx={{ padding: 3 }}>
+        {successMessage && (
+          <Alert severity="success" sx={{ mb: 2 }}>
+            {successMessage}
+          </Alert>
+        )}
+        <form onSubmit={handleSubmit} style={{ width: '100%', minHeight: '60vh' }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Name"
+                variant="outlined"
+                fullWidth
+                name="name"
+                value={studentData.name}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="ID"
+                variant="outlined"
+                fullWidth
+                name="id"
+                value={studentData.id}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Region"
+                variant="outlined"
+                fullWidth
+                name="region"
+                value={studentData.region}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="School"
+                variant="outlined"
+                fullWidth
+                name="school"
+                value={studentData.school}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12} mt={3}>
+              <Typography variant="h6" gutterBottom>
+                Upload CSV/Excel File
               </Typography>
-            </Paper>
+              <Input
+                type="file"
+                inputProps={{ accept: '.csv, .xls, .xlsx' }}
+                onChange={handleFileChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Button variant="contained" color="primary" type="submit">
+                Add Student
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ padding: 2 }}>
-              <Typography sx={{color:'#005A8D'}} variant="h6">Subjects Offered</Typography>
-              <Typography variant="body2">
-                1. Science: Explore physics, chemistry, and biology.
-                <br />
-                2. Arts: Dive into literature, history, and visual arts.
-              </Typography>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ padding: 2 }}>
-              <Typography sx={{color:'#005A8D'}} variant="h6">Extracurricular Activities</Typography>
-              <Typography variant="body2">
-                Join clubs like the debate club, sports teams, and music groups to enhance your SHS experience.
-              </Typography>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Box>
+        </form>
+      </Paper>
+    </Box>
+  );
+};
 
-      <Box my={4}>
-        <Typography sx={{color:'#FEFEFE'}} variant="h5" gutterBottom>
-          Registration Process
-        </Typography>
-        <Typography sx={{color:'#CED1D5'}} variant="body1" paragraph>
-          Follow these steps to register for SHS:
-        </Typography>
-        <Typography sx={{color:'#CED1D5'}} variant="body2">
-          1. Gather necessary documents.
-          <br />
-          2. Complete the registration form.
-          <br />
-          3. Submit your application before the deadline.
-        </Typography>
-      </Box>
-
-      <Box my={4}>
-        <Typography sx={{color:'#CED1D5'}} variant="h5" gutterBottom>
-          Placement Information
-        </Typography>
-        <Typography sx={{color:'#CED1D5'}} variant="body1" paragraph>
-          Understand how the placement process works and check your results here: 
-          <a href="/placement-results"> Placement Results Link</a>
-        </Typography>
-      </Box>
-
-      <Box my={4}>
-        <Typography sx={{color:'#CED1D5'}} variant="h5" gutterBottom>
-          FAQs
-        </Typography>
-        <Typography sx={{color:'#CED1D5'}} variant="body2">
-          <strong>Q: How do I know which schools I can apply to?</strong>
-          <br />
-          A: You can check the list of available SHS on our website.
-          <br />
-          <strong>Q: What if I miss the registration deadline?</strong>
-          <br />
-          A: Contact your local education office for assistance.
-        </Typography>
-      </Box>
-    </Container>
-    </div>
-  )
-}
-
-export default AddStudent
+export default AddStudent;
