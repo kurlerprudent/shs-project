@@ -7,7 +7,7 @@ const Footer = () => {
     
     
     <footer className="bg-gray-800 text-white py-8">
-        <div className="container mx-auto flex flex-wrap justify-between">
+        <div className="container mx-auto flex flex-wrap justify-between p-5">
            
             <div className="w-full md:w-1/4 mb-6 md:mb-0">
                 <h2 className="text-lg font-bold mb-2">BUYGET ICT HUB in partnership  with  QuiverTech</h2>
