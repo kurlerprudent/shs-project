@@ -6,12 +6,9 @@ import { IStudentRegistrationFormData } from "@/interfaces/IStudentRegistrationF
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { FC, useEffect, useState } from "react";
-interface StudentSummaryProps {
-  studentData: IStudentWithSchoolData;
-  formData: IStudentRegistrationFormData;
-}
 
-const StudentSummary: FC<StudentSummaryProps> = () => {
+
+const StudentSummary = () => {
   const { studentID } = useParams();
 
   const [studentData, setStudentData] = useState<IStudentWithSchoolData | null>(
