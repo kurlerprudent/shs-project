@@ -25,7 +25,7 @@ const Navbar: FC = () => {
         />
         <span className="text-2xl font-bold">SHS WEB</span>
       </div>
-      <div className="hidden md:flex space-x-8 bg-[#181818]">
+      <div className="hidden md:flex space-x-8 ">
         <Link href="/" className="hover:text-gray-300">Home</Link>
         <Link href="/admission" className="hover:text-gray-300">Admission page</Link>
         <Link href="/news" className="hover:text-gray-300">News & Activities</Link>
