@@ -1,7 +1,29 @@
-import { IStudentWithSchoolData } from "@/interfaces/IStudent";
+import { IStudent, IStudentWithSchoolData } from "@/interfaces/IStudent";
 import axios from "axios";
 import { getApi } from "./core";
 type StudentParam = { id: string } | { indexNumber: string };
+
+export const getStudents = async (school_id?: string): Promise<IStudent[]> => {
+  try {
+    const api = getApi();
+
+    const response = await api.get<IStudent[]>("student", {
+      params: { school_id },
+    });
+
+    return response.data;
+  } catch (error: unknown) {
+    console.log("This is the error", error);
+    if (axios.isAxiosError(error)) {
+      throw new Error(
+        error.response?.data ||
+          "An error occurred during creating the vote payment prompt"
+      );
+    }
+    console.log(error);
+    throw new Error("An unexpected error occurred");
+  }
+};
 
 export const getStudentSchoolData = async (
   param: StudentParam
