@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar"; // Import the Navbar component
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <Navbar /> {/* Navbar is now included in the layout */}
         {children}
+        <Footer/>
       </body>
     </html>
   );
