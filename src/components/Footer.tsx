@@ -1,3 +1,4 @@
+import Link from "next/link"
 
 
 
@@ -17,9 +18,9 @@ const Footer = () => {
             <div className="w-full md:w-1/4 mb-6 md:mb-0">
                 <h2 className="text-lg font-bold mb-2">Useful Links</h2>
                 <ul className="text-sm">
-                    <li><a href="#" className="hover:underline">Home</a></li>
-                    <li><a href="#" className="hover:underline">Amission</a></li>
-                    <li><a href="#" className="hover:underline">News&Activities</a></li>
+                    <li><Link href="#" className="hover:underline">Home</Link></li>
+                    <li><Link href="#" className="hover:underline">Amission</Link></li>
+                    <li><Link href="#" className="hover:underline">News&Activities</Link></li>
                     
                 </ul>
             </div>
@@ -27,10 +28,10 @@ const Footer = () => {
             <div className="w-full md:w-1/4 mb-6 md:mb-0">
                 <h2 className="text-lg font-bold mb-2">Socials</h2>
                 <ul className="text-sm">
-                    <li><a href="#" className="hover:underline">Facebook</a></li>
-                    <li><a href="#" className="hover:underline">Whatsapp</a></li>
-                    <li><a href="#" className="hover:underline">Snapchat</a></li>
-                    <li><a href="#" className="hover:underline">Telegram</a></li>
+                    <li><Link href="#" className="hover:underline">Facebook</Link></li>
+                    <li><Link href="#" className="hover:underline">Whatsapp</Link></li>
+                    <li><Link href="#" className="hover:underline">Snapchat</Link></li>
+                    <li><Link href="#" className="hover:underline">Telegram</Link></li>
                 </ul>
             </div>
            
