@@ -12,7 +12,7 @@ const Footer = () => {
            
             <div className="w-full md:w-1/4 mb-6 md:mb-0">
                 <h2 className="text-lg font-bold mb-2">BUYGET ICT HUB in partnership  with  QuiverTech</h2>
-                <p className="text-sm">With years of experience, Peskab has built a reputation for excellence, precision, and customer satisfaction.</p>
+                <p className="text-sm">With years of experience, BUYGET has built a reputation for excellence, precision, and customer satisfaction.</p>
             </div>
            
             <div className="w-full md:w-1/4 mb-6 md:mb-0">
