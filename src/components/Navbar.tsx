@@ -1,7 +1,6 @@
 "use client";
+
 import { Images } from "@/assets";
-import { Close } from "@mui/icons-material";
-import MenuIcon from '@mui/icons-material/Menu';
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
@@ -9,12 +8,11 @@ import { FC, useState } from "react";
 const Navbar: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <nav className="relative flex justify-between items-center p-6 bg-[#002b5b] text-white">
+      {/* Logo and Title */}
       <div className="flex items-center space-x-3">
         <Image
           src={Images.coat_of_arms}
@@ -25,27 +23,75 @@ const Navbar: FC = () => {
         />
         <span className="text-2xl font-bold">SHS WEB</span>
       </div>
-      <div className="hidden md:flex space-x-8 bg-[#181818]">
-        <Link href="/" className="hover:text-gray-300">Home</Link>
-        <Link href="/admission" className="hover:text-gray-300">Admission page</Link>
-        <Link href="/news" className="hover:text-gray-300">News & Activities</Link>
+
+      {/* Links for Desktop View */}
+      <div className="hidden md:flex space-x-8">
+        <Link href="/" className="hover:text-gray-300">
+          Home
+        </Link>
+        <Link href="/students" className="hover:text-gray-300">
+          Admission Page
+        </Link>
+        {/* <Link href="/news" className="hover:text-gray-300">
+          News & Activities
+        </Link> */}
       </div>
+
+      {/* Menu Icon for Mobile */}
       <div className="md:hidden">
         <button onClick={toggleMenu}>
-          {menuOpen ?
-            <Close/>:
-            <MenuIcon/>
-            }
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-8 h-8"
+          >
+            {menuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 7.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+              />
+            )}
+          </svg>
         </button>
       </div>
+
+      {/* Mobile Menu */}
       <div
-        className={`absolute top-16 right-0 w-full bg-[#002b5b] text-white flex flex-col items-center space-y-4 p-4 transition-transform duration-300 ease-in-out transform ${
-          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`absolute top-20 right-0 w-full bg-[#002b5b] text-white flex flex-col items-center space-y-6 p-6 transition-transform duration-300 ease-in-out transform ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
       >
-        <Link href="/" className="hover:text-gray-300">Home</Link>
-        <Link href="/admission" className="hover:text-gray-300">Admission page</Link>
-        <Link href="/news" className="hover:text-gray-300">News & Activities</Link>
+        <Link
+          href="/"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-gray-300"
+        >
+          Home
+        </Link>
+        <Link
+          href="/students"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-gray-300"
+        >
+          Admission Page
+        </Link>
+        {/* <Link
+          href="/news"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-gray-300"
+        >
+          News & Activities
+        </Link> */}
       </div>
     </nav>
   );
