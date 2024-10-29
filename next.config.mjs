@@ -18,7 +18,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "buyget-db.s3.eu-central-1.amazonaws.com",
+        hostname: "shsweb-db.s3.eu-central-1.amazonaws.com",
         port: "",
         pathname: "/**",
       },

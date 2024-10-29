@@ -20,8 +20,8 @@ export const getApi = (req?: NextRequest) => {
 
     console.log("Server API");
     return axios.create({
-      baseURL: process.env.API_BASE_URL,
-      withCredentials: true,
+      baseURL: process.env.NEXT_PUBLIC_API_URL,
+      // withCredentials: true,
       headers: {
         "Content-Type": "application/json",
         accept: "application/json",
