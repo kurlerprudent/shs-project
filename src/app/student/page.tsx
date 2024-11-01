@@ -1,37 +1,38 @@
 "use client";
-
-import { getStudentSchoolData } from "@/controllers/student";
+import { fetchStudents } from "@/controllers/serverActions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function EnterIndexNumber() {
-  const [indexNumber, setIndexNumber] = useState("");
+  const [indexNumber, setIndexNumber] = useState<string>(""); // Keep this as a string
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null); // State for error message
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const router = useRouter();
 
   const handleSubmit = async () => {
-    if (!indexNumber) {
-      setErrorMessage("Please enter your index number.");
-      return;
-    }
-    if (indexNumber.length !== 8) {
-      setErrorMessage("Invalid index number. It must be exactly 8 characters.");
-      return;
-    }
-
     setLoading(true);
-    setErrorMessage(null); // Clear any previous error message
-
+    setErrorMessage(null);
     try {
-      const data = await getStudentSchoolData({ indexNumber });
-      console.log("Student Data:", data);
+      const studentData = await fetchStudents();
+      console.log("Fetched student data:", studentData); // Log the fetched data
 
-      // Navigate to the next page with the data as query parameters
-      router.push(`/student/${data.id}`);
+      // Assuming studentData is an array of student objects
+      const students = Array.isArray(studentData) ? studentData : [];
+
+      // Find the student by index number
+      const student = students.find((student: { index_number: string }) => student.index_number === indexNumber);
+
+      if (student) {
+        router.push(`/student/${student.index_number}`);
+      } else {
+        setErrorMessage("Index number not found");
+      }
+
+      console.log("Student ID found:", student?.id); // Log the found student ID
+
     } catch (error) {
       console.error("Error fetching student data:", error);
-      setErrorMessage("Student not found. No admission yet."); // Set error message
+      setErrorMessage("An error occurred while fetching student data");
     } finally {
       setLoading(false);
     }
@@ -47,21 +48,18 @@ export default function EnterIndexNumber() {
           Enter your index number to check if you have been admitted to a
           school.
         </p>
-
         {errorMessage && (
           <div className="bg-red-100 text-red-700 p-4 rounded mb-6">
             {errorMessage}
           </div>
         )}
-
         <input
           type="text"
           placeholder="Enter your index number"
           value={indexNumber}
-          onChange={(e) => setIndexNumber(e.target.value)}
+          onChange={(e) => setIndexNumber(e.target.value)} // Keep as string
           className="w-full p-4 border text-black rounded mb-6 focus:outline-none focus:ring-4 focus:ring-blue-500"
         />
-
         <button
           onClick={handleSubmit}
           className="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition"

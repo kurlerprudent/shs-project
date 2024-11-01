@@ -1,9 +1,13 @@
 "use client";
 
+import { fetchStudents } from "@/controllers/serverActions";
 import Link from "next/link";
 import { FC } from "react";
 
 const Home: FC = () => {
+
+  const students = fetchStudents()
+  console.log(students)
   return (
     <div className="min-h-screen text-white bg-[#002b5b] flex items-center justify-center">
       {/* Hero Section */}

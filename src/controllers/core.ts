@@ -20,7 +20,7 @@ export const getApi = (req?: NextRequest) => {
 
     console.log("Server API");
     return axios.create({
-      baseURL: process.env.API_BASE_URL,
+      baseURL: 'https://difficult-continuity-so-fraction.trycloudflare.com',
       withCredentials: true,
       headers: {
         "Content-Type": "application/json",
