@@ -7,7 +7,8 @@ export const fetchStudents = async()=>{
         
         const response = await axios.get('https://electrical-commission-inch-ko.trycloudflare.com/student')
         if(!response){
-    
+            console.log('Failed to fetch students')
+            
         }
         const data = response.data
     
