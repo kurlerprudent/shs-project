@@ -3,7 +3,7 @@ import { fetchStudents } from "@/controllers/serverActions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function EnterIndexNumber() {
+export default async function EnterIndexNumber() {
   const [indexNumber, setIndexNumber] = useState<string>(""); // Keep this as a string
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
